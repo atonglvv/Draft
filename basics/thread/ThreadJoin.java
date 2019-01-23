@@ -41,6 +41,11 @@ class MyThread implements Runnable {
     public void run() {
         for (int i = 0; i < 50; i++) {
             System.out.println(Thread.currentThread().getName() + "-" + i);
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
