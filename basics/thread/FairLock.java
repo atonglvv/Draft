@@ -8,6 +8,10 @@ import java.util.concurrent.locks.ReentrantLock;
  * @email lt1550919167@163.com
  * @QQ 1550919167
  * @Description: ReentrantLock还可以指定为公平锁
+ *              公平锁：加锁前先查看是否有排队等待的线程，有的话优先处理排在前面的线程，先来先得。
+ *              非公平所：线程加锁时直接尝试获取锁，获取不到就自动到队尾等待。
+ *              非公平锁比公平锁性能高5-10倍
+ *              因为公平锁需要在多核情况下维护一个队列，如果当前线程不是队列的第一个无法获取锁，增加了线程切换次数。
  */
 public class FairLock extends Thread{
 
