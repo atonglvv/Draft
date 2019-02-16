@@ -10,6 +10,10 @@ package basics;
 public class Draft {
 
     public static void main (String[] args) {
+
+        int[] array = {1,2,3};
+        System.out.println(array[1]);
+
         //匿名内部类
         Object o = new Object() {
             //重写了equals(),不管参数是什么，都是返回true

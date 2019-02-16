@@ -17,7 +17,7 @@ public class RectangleCovering {
         }
         int pre1 = 1,pre2 = 2;
         int result = 0;
-        for (int i = 3; i < n; i++) {
+        for (int i = 3; i <= n; i++) {
             result = pre1 + pre2;
             pre1 = pre2;
             pre2 = result;
