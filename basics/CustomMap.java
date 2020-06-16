@@ -13,10 +13,10 @@ import java.util.Map;
 public class CustomMap {
 
     public static void main (String[] args) {
-        Map<String,Object> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("1","111");
 
-        HashMap<String,Object> hashMap = new HashMap<>();
+        HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("2","222");
 
     }
