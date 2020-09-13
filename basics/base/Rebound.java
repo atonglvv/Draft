@@ -14,7 +14,25 @@ public class Rebound {
         for (int i = 0;i < 10; i++) {
             sum += height;
             height = height * 2 / 3;
+            sum += height;
         }
+        sum -= height;
         System.out.println("sum = " + sum + ",height = " + height);
     }
+
+//    public static void main(String[] args) {
+//        double oldgd = 100.00;
+//        double newgd = 100.00;
+//        double zgd = 0.00;
+//        // 取最大和最小
+//        for (int i = 10; i > 0; i--)
+//        {
+//            newgd = oldgd * 2 / 3;
+//            zgd = zgd + oldgd + newgd;
+//            oldgd = newgd;
+//        }
+//        // 输出
+//        System.out.println("总共经过" + zgd + "最后一次反弹" + newgd);
+//    }
+
 }

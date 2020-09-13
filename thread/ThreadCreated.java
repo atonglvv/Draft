@@ -1,4 +1,4 @@
-package basics.thread;
+package thread;
 
 /**
  * @Auther: carver

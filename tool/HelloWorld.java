@@ -8,23 +8,37 @@ package tool;
  * @Description:
  */
 
-public class HelloWorld {
-//    public static void main(String[] args) {
-//
-//        System.out.println('\n');
-//
-//
-//
-//        float a = 15.0F;
-//        int b = 2;
-//        float c =15.0F;
-//        boolean x = a > b;
-//        boolean y = c > a;
-//        boolean z = (c == a);
-//        System.out.println("x =" + x);
-//        System.out.println("y =" + y);
-//        System.out.println("z =" + z);
-//
-//
-//    }
+class HelloWorld {
+
+    int a = 10;
+    {
+        a = 2;
+    }
+
+    public static void main(String[] args) {
+        String str = "abc";
+
+        Car car = new Car();
+
+        new HelloWorld().test(car);
+        System.out.println(car.name);
+
+//        new HelloWorld().test(str);
+//        System.out.println(str);
+
+//        str = "abb";
+//        System.out.println(str);
+//        System.out.println(new HelloWorld().a);
+    }
+
+    public void test(String string) {
+        string = "abb";
+    }
+    public void test(Car car) {
+        car.name = "abb";
+    }
+}
+
+class Car {
+    String name = "car";
 }

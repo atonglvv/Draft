@@ -1,4 +1,4 @@
-package basics.thread;
+package thread;
 
 import java.util.LinkedList;
 import java.util.concurrent.TimeUnit;

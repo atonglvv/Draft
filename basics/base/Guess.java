@@ -1,6 +1,6 @@
 package basics.base;
 
-import basics.thread.SynAndNoSyn;
+import thread.SynAndNoSyn;
 
 import java.util.Scanner;
 
