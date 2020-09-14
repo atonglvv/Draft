@@ -2,9 +2,9 @@ package structure;
 
 public class IsRing {
 
-    public boolean isRing() {
-        ListNode quick = null;
-        ListNode slow = null;
+    public boolean isRing(ListNode head) {
+        ListNode quick = head;
+        ListNode slow = head;
         while(quick != null && quick.next != null) {
             quick = quick.next.next;    //快指针一次两个节点
             slow = slow.next;           //慢指针一次一个节点
