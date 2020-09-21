@@ -4,6 +4,9 @@ import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;
 import java.lang.management.ThreadMXBean;
 
+/**
+ * 通过 JMX 查看普通的 Java 程序有哪些线程
+ */
 public class ThreadShow {
     public static void main(String[] args) {
         // 获取 Java 线程管理 MXBean
