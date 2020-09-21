@@ -1,4 +1,4 @@
-package basics.sword.tree;
+package sword.tree;
 
 import java.util.ArrayList;
 import java.util.Collections;

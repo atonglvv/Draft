@@ -1,4 +1,4 @@
-package basics.sword.linked;
+package sword.linked;
 
 /**
  * @Auther: carver

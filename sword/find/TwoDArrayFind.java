@@ -1,4 +1,4 @@
-package basics.sword.find;
+package sword.find;
 
 /**
  * @Auther: carver

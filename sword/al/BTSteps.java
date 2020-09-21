@@ -1,4 +1,4 @@
-package basics.sword.al;
+package sword.al;
 
 import java.util.Arrays;
 

@@ -1,6 +1,4 @@
-package basics.sword.linked;
-
-import java.util.ArrayList;
+package sword.linked;
 
 /**
  * @Auther: carver

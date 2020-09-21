@@ -1,4 +1,4 @@
-package basics.sword.array;
+package sword.array;
 
 /**
  * @Auther: carver

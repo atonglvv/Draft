@@ -1,4 +1,4 @@
-package basics.sword.al;
+package sword.al;
 
 /**
  * @Auther: carver

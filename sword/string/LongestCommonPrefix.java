@@ -1,4 +1,4 @@
-package basics.sword.string;
+package sword.string;
 
 /**
  * @Auther: carver
