@@ -1,8 +1,5 @@
 package map;
 
-import java.util.HashMap;
-import java.util.concurrent.ConcurrentHashMap;
-
 public class HashMapAnalyze {
 
     public static void main(String[] args) {
@@ -11,6 +8,7 @@ public class HashMapAnalyze {
 //        float a = 0.0f;
 //        a = a / 0.0f;
 //        System.out.println(Float.isNaN(a));
+
 
         String a = "HelloWorld";
         int length = a.length();
