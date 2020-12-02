@@ -34,8 +34,11 @@ public class ReentrantlockCustomer {
 
     void m2() {
         lock.lock();
-        System.out.println("m2...");
-        lock.unlock();
+        try {
+            System.out.println("m2...");
+        }finally {
+            lock.unlock();
+        }
     }
 
     public static void main(String[] args) {

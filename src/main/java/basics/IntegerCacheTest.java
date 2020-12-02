@@ -16,9 +16,9 @@ public class IntegerCacheTest {
          * 而是直接 引用常量池中的 Integer 对象，
          * 所以上面的面试题中 f1==f2的结果是 true，而 f3==f4 的结果是 false。
          */
-        Integer f1 = 10,f2 = 10,f3 = 200,f4 = 200;
-        System.out.println(f1 == f2);
-        System.out.println(f3 == f4);
+        Integer f1 = 10, f2 = 10, f3 = 200, f4 = 200;
+        System.out.println(f1.equals(f2));
+        System.out.println(f3.equals(f4));
 
     }
 }

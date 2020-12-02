@@ -36,6 +36,7 @@ public class Animal {
 }
 
 class Fish extends Animal {
+    @Override
     public void move() {
         System.out.println("swimming");
     }
@@ -43,6 +44,7 @@ class Fish extends Animal {
 
 class Bird extends Animal {
 
+    @Override
     public void move() {
         System.out.println("flying");
     }

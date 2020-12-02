@@ -46,9 +46,10 @@ public class ThreadFor {
             String str = list.get(i);
             System.out.println(list.get(i));
             Runnable run = new Runnable() {
+                @Override
                 public void run() {
                     try {
-                        new Thread().sleep(1000);
+                        Thread.sleep(1000);
                         //模拟耗时操作
                         System.out.println("[1]" + Thread.currentThread().getName() + "----" + str);
                     } catch (Exception e) {
@@ -69,7 +70,8 @@ public class ThreadFor {
         AtomicInteger connectionIds = new AtomicInteger(0);
         for (int index = 0; index < loopNum; index++) {
             try {
-                new Thread().sleep(1000);  //模拟耗时操作
+                //模拟耗时操作
+                Thread.sleep(1000);
                 System.out.println("[2]" + Thread.currentThread().getName());
 
             } catch (Exception e) {

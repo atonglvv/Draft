@@ -42,8 +42,7 @@ class SingleTone {
 public class ClassLoader {
 
     public static void main (String[] args) {
-        SingleTone instance = SingleTone.getInstance();
-        System.out.println("count1 = " + instance.count1);
-        System.out.println("count2 = " + instance.count2);
+        System.out.println("count1 = " + SingleTone.count1);
+        System.out.println("count2 = " + SingleTone.count2);
     }
 }

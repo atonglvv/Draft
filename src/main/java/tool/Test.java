@@ -22,6 +22,7 @@ class A {
 public class Test extends A {
     String t = "t2";
 
+    @Override
     public void Test2() {
         System.out.println("这是Test-Test2:" + t);
     }

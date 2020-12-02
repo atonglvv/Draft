@@ -70,12 +70,15 @@ public class JDBCConnection {
 
         } finally {
             try {
-                if (rs != null)
+                if (rs != null) {
                     rs.close(); // 关闭结果数据集
-                if (stmt != null)
+                }
+                if (stmt != null) {
                     stmt.close(); // 关闭执行环境
-                if (conn != null)
+                }
+                if (conn != null) {
                     conn.close(); // 关闭数据库连接
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }

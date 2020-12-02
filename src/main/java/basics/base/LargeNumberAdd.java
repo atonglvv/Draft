@@ -54,8 +54,9 @@ public class LargeNumberAdd {
 
             if ((nSum + nOver) >= 10) {
                 // 如果是边界 ，则整体加一
-                if (x == maxlen - 1)
+                if (x == maxlen - 1) {
                     overFlow = true;
+                }
                 result.append(nSum - 10 + nOver);
                 nOver = 1;
             } else {

@@ -25,6 +25,7 @@ public class Rectangle {
         return this.length * this.width;
     }
 
+    @Override
     public String toString() {
         return "长方形长" + this.length + ",宽" + this.width + ",面积为" + area();
     }
@@ -51,6 +52,7 @@ class Cuboid extends Rectangle {
         return this.length * this.width * this.high;
     }
 
+    @Override
     public String toString() {
         return "长方体长" + this.length + ",宽" + this.width + ",高" + this.high + ",面积为" + volume();
     }
