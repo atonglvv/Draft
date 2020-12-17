@@ -1,5 +1,7 @@
 package stream.action;
 
+import com.alibaba.fastjson.JSON;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -60,7 +62,7 @@ public class Tree {
 
 
     public static void main(String[] args) {
-        System.out.println(new Tree().selectTree(listTree).toString());
+        System.out.println(JSON.toJSONString(new Tree().selectTree(listTree)));
     }
 
 }
