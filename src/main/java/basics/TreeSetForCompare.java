@@ -15,7 +15,7 @@ import java.util.TreeSet;
 public class TreeSetForCompare {
 
     public static void main(String[] args) {
-        // Java 7的钻石语法(构造器后面的尖括号中不需要写 类型)
+        // Java 7的钻石语法(构造器后面的尖括号中不需要写类型)
         Set<StudentWithCompara> set = new TreeSet<>();
 
         set.add(new StudentWithCompara("Carver",18));

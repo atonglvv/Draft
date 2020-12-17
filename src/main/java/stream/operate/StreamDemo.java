@@ -6,7 +6,14 @@ import java.util.stream.Stream;
 
 /**
  * @program: draft
- * @description: Stream相关operate
+ * @description:
+ * Stream相关operate
+ *  forEach
+ *  filter
+ *  count
+ *  limit
+ *  skip
+ *  concat
  * @author: atong
  * @create: 2020-11-19 15:24
  */
