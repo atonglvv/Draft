@@ -5,7 +5,8 @@ package string;
  * @Date: 2019/4/11 12:41
  * @email lt1550919167@163.com
  * @QQ 1550919167
- * @Description: String str=“abcsabadfba”,判断“ba”在str中出现的位置和次数
+ * @Description:
+ * String str=“abcsabadfba”,判断“ba”在str中出现的位置和次数
  * indexOf(String str, int fromIndex)   ->  查找指定字符或字符串在字符串中从index的地方开始找第一次出现地方的索引
  * str -> the substring to search for.
  * fromIndex -> the index from which to start the search.
