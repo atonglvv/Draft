@@ -35,7 +35,8 @@ public class Test extends A {
         test.Test1();
         test.Test2();
         ((Test)test).Test3();
-//        test.Test3(); //error
+        //error ↓
+        //test.Test3();
         System.out.println(test.t);
         test = (Test) test;
         System.out.println(test.t);
