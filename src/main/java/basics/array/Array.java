@@ -1,4 +1,4 @@
-package basics;
+package basics.array;
 
 /**
  * @Auther: carver
@@ -28,7 +28,8 @@ public class Array {
             for (int j = 0; j < 2; j++) {
                 System.out.print(score2[i][j] + "\t");
             }
-            System.out.println("");        //换行
+            //换行
+            System.out.println("");
 
         }
 

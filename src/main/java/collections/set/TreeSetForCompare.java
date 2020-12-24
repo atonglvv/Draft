@@ -1,4 +1,4 @@
-package basics;
+package collections.set;
 
 import tool.StudentWithCompara;
 
