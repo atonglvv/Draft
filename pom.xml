@@ -20,6 +20,10 @@
         </plugins>
     </build>
 
+    <properties>
+        <org.springframework.version>5.2.12.RELEASE</org.springframework.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -31,6 +35,25 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.73</version>
+        </dependency>
+
+<!--        &lt;!&ndash; Spring核心依赖 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-core</artifactId>-->
+<!--            <version>${org.springframework.version}</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; Spring beans包&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-beans</artifactId>-->
+<!--            <version>${org.springframework.version}</version>-->
+<!--        </dependency>-->
+        <!-- Spring 容器包 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${org.springframework.version}</version>
         </dependency>
     </dependencies>
     
