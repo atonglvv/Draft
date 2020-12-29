@@ -1,4 +1,4 @@
-package basics.base;
+package string;
 
 
 /**
@@ -8,11 +8,11 @@ package basics.base;
  * @QQ 1550919167
  * @Description: 从字符串中删除给定的字符。
  */
-public class DeleteChar {
+public class StringReplace {
 
     public static void main(String[] args) {
 
-        DeleteChar deleteChar = new DeleteChar();
+        StringReplace deleteChar = new StringReplace();
 
         System.out.println(deleteChar.deleteChar("abccd", 'c'));
     }
