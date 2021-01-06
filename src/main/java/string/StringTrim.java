@@ -3,6 +3,8 @@ package string;
 /**
  * @program: draft
  * @description: string trim() 相关函数操作
+ * 正常空格的ascii是32,但还有一种特殊空格的ascii是160
+ * 注意 Java中的trim()只能去掉首尾ascii为32的正常空格。
  * @author: atong
  * @create: 2021-01-06 16:09
  */
