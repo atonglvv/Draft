@@ -10,6 +10,7 @@ package string;
  */
 public class StringTrim {
     public static void main(String[] args) {
+        //特殊空格
         String name = "化妆水/爽肤水 i ";
 
         name = name.trim();
