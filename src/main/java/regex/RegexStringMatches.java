@@ -6,7 +6,7 @@ package regex;
  * @author: atong
  * @create: 2020-12-01 17:10
  */
-public class RegexDemo {
+public class RegexStringMatches {
     /**只允许用户输入数字1-9,字母a-z,A-Z,只能半角,不能有空格的正则表达式*/
     public static final String ONLY_LETTER_OR_NUMBER = "^[a-z0-9A-Z]+$";
 
