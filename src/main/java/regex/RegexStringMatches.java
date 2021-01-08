@@ -3,6 +3,9 @@ package regex;
 /**
  * @program: draft
  * @description: 正则基本使用
+ * matches() 方法用于检测字符串是否匹配给定的正则表达式。
+ * 调用此方法的 str.matches(regex) 形式与以下表达式产生的结果完全相同：
+ * Pattern.matches(regex, str)
  * @author: atong
  * @create: 2020-12-01 17:10
  */
@@ -16,6 +19,11 @@ public class RegexStringMatches {
         System.out.println(name + "是否只含有数字或字母:" + containChinese);
     }
 
+    /**
+     * 检测字符串是否只含有数字以及大小写字母
+     * @param str 字符串
+     * @return 是否只含有数字与大小写字母
+     */
     public static boolean isOnlyLetterOrNumber(String str){
         return str.matches(ONLY_LETTER_OR_NUMBER);
     }
