@@ -36,15 +36,15 @@ public class QuickSort {
         }
         i = low;
         j = high;
-        //temp为基数
+        //选择一个基数[这里选用第一个元素作为基数]
         temp = array[low];
 
         while (i < j) {
-            //由左至右比较，如果大于等于基数则继续往右进行比较
+            //由右至左比较，如果大于等于基数则继续往左进行比较,直到找到找到一个小于基数的数
             while (temp <= array[j] && i < j) {
                 j--;
             }
-            //由右至左比较，如果小于等于基数则继续往左进行比较
+            //由左至右比较，如果小于等于基数则继续往左进行比较,直到找到一个大于基数的数
             while (temp >= array[i] && i < j) {
                 i++;
             }
@@ -55,7 +55,7 @@ public class QuickSort {
                 array[i] = t;
             }
         }
-        //交换基数
+        //交换基数, 将基数与指针[low/high]相遇的地方数值交换
         array[low] = array[i];
         array[i] = temp;
         //递归调用左半数组
