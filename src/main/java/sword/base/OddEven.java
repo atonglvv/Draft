@@ -17,9 +17,6 @@ public class OddEven {
 
     public static boolean isOdd(int number) {
         System.out.println("number % 2 = " +  number % 2);
-        if (number % 2 != 0) {
-            return true;
-        }
-        return false;
+        return number % 2 != 0;
     }
 }
