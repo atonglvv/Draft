@@ -1,4 +1,4 @@
-package sword.leetcode.linearlist;
+package sword.leetcode.linearlist.array;
 
 import java.util.Arrays;
 
