@@ -22,7 +22,7 @@ import java.util.Arrays;
  */
 public class RemoveDuplicates {
     public static void main(String[] args) {
-        int[] array = {1,1,2};
+        int[] array = {1,1,2,3,3,3};
         int length = removeDuplicates(array);
         System.out.println("length = " + length + ", and array is now " + Arrays.toString(array));
         for (int i = 0; i < length; i++) {
