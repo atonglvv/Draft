@@ -11,6 +11,12 @@ import java.util.Arrays;
  * Do not allocate extra space for another array, you must do this in place with constant memory[固定的内存].
  * For example, Given input array A = [1,1,2],
  * Your function should return length = 2, and A is now [1,2].
+ * Solution:
+ * 该题解题思路是快慢指针,
+ * 一个指针 [int length = 0]记录唯一的值,并且记录长度。
+ * 另一个指针i(for循环index)一直往前遍历。
+ * 如果两个指针的value相等,则第一个指针不动,第二个指针继续往前走。
+ * 如果两个指针的value不等,则第一个指针往前走一步,并且把第一个指针的value设置为第二个指针的值,然后第二个指针往前走一步。
  * @author: atong
  * @create: 2021-01-15 13:37
  */
