@@ -11,6 +11,7 @@ import java.util.Arrays;
  * Do not allocate extra space for another array, you must do this in place with constant memory[固定的内存].
  * For example, Given input array A = [1,1,2],
  * Your function should return length = 2, and A is now [1,2].
+ *
  * Solution:
  * 该题解题思路是快慢指针,
  * 一个指针 [int length = 0]记录唯一的值,并且记录长度。

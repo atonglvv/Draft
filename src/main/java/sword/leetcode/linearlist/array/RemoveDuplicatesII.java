@@ -9,6 +9,7 @@ import java.util.Arrays;
  * Follow up[追踪/跟进] for ”Remove Duplicates”: What if duplicates are allowed at most twice?
  * For example, Given sorted array A = [1,1,1,2,2,3],
  * Your function should return length = 5, and A is now [1,1,2,2,3]
+ *
  * Solution:
  * 加一个变量记录一下元素出现的次数即可。因为这题是已经排好序的数组,所以一个变量即可解决。
  * 如果是未排好序的数组,则需要引入一个hashmap来记录出现次数。

@@ -8,6 +8,7 @@ package sword.leetcode.linearlist.array;
  * (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
  * You are given a target value to search. If found in the array return its index, otherwise return -1.
  * You may assume[设想/假设] no duplicate exists in the array.
+ *
  * Solution:
  * 二分查找,难度主要在于左右边界的确定。
  * 该题难点在于数组以某个中心点进行旋转。
@@ -16,6 +17,7 @@ package sword.leetcode.linearlist.array;
  * 若pivot位于数组的左边,则旋转之后数组左边是有序的。
  * 若pivot位于数组的右边,则旋转之后数组右边是有序的。
  * 该题还有一个重点,
+ * 若A[1]<A[m], 那么[1,m]为递增序列。
  * 若array[left] < array[mind]则mind左侧是有序的;
  * 若array[mind] < array[right]则mind右侧是有序的。
  * 若 target 位于有序侧,则跟普通二分无区别。
