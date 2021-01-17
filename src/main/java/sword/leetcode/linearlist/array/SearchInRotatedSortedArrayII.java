@@ -11,7 +11,7 @@ package sword.leetcode.linearlist.array;
  * 在Search in Rotated Sorted Array基础之上,允许元素重复。
  * 元素重复就要考虑array[l] = array[m] 或者 array[m] = array[r]的情况了。
  * 比如： [1,1,1,1,3] -> [1,3,1,1,1]
- * 若array[l] = array[m] 或者 array[m] = array[r]则left++
+ * 若array[l] = array[m] 或者 array[m] = array[r]则left++,直到array[l] != array[m]
  * @author: atong
  * @create: 2021-01-16 20:48
  */
