@@ -14,6 +14,6 @@ public class HashMapGetInexistenceKey {
         hm.put("a", "1");
         hm.put("b", "2");
         String c = hm.get("c");
-        System.out.println(c);
+        System.out.println("HashMap 获取一个不存在的key的结果是: " + c);
     }
 }
