@@ -2,17 +2,12 @@ package string.bytes;
 
 /**
  * @program: draft
- * @description: Java对象运行时内存大小
+ * @description: Java对象getBytes,中文与英文
  * @author: atong
  * @create: 2021-01-21 13:41
  */
-public class StringMemorySize {
+public class StringBytesLength {
     public static void main(String[] args) {
-
-        String s0 = "ilove";
-        String s1 = "我爱";
-        System.out.println(s0.getBytes().length);
-        System.out.println(s1.getBytes().length);
 
         StringBuilder stringEn10000 = new StringBuilder();
         for (int i = 0; i < 10000; i++) {
