@@ -1,4 +1,4 @@
-package string;
+package string.bytes;
 
 import java.io.UnsupportedEncodingException;
 
