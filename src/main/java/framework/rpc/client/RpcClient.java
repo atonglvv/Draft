@@ -28,9 +28,9 @@ public class RpcClient {
             Object object = inputStream.readObject();
             System.out.println(object.toString());
 
-            socket.close();
             inputStream.close();
             outputStream.close();
+            socket.close();
         }catch (Exception e) {
             e.printStackTrace();
         }
