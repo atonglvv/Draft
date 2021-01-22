@@ -1,5 +1,6 @@
 package framework.rpc.server;
 
+import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -15,7 +16,9 @@ public class RpcServer {
             ServerSocket serverSocket = new ServerSocket(8888);
             while (true){
                 Socket socket = serverSocket.accept();
-                socket.close();
+                ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
+                outputStream.writeObject("hello world");
+                outputStream.flush();
             }
         }catch (Exception e){
             e.printStackTrace();
