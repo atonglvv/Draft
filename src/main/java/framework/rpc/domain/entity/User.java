@@ -1,4 +1,4 @@
-package framework.rpc.entity;
+package framework.rpc.domain.entity;
 
 import lombok.Data;
 

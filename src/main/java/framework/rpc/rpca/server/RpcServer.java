@@ -1,5 +1,6 @@
-package framework.rpc.server;
+package framework.rpc.rpca.server;
 
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -16,12 +17,16 @@ public class RpcServer {
             ServerSocket serverSocket = new ServerSocket(8888);
             while (true){
                 Socket socket = serverSocket.accept();
-                ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
-                outputStream.writeObject("hello world");
-                outputStream.flush();
+                process(socket);
             }
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public static void process (Socket socket) throws IOException {
+        ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
+        outputStream.writeObject("hello world");
+        outputStream.flush();
     }
 }
