@@ -1,5 +1,7 @@
 package framework.rpc.rpca.client;
 
+import framework.rpc.domain.entity.User;
+
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -23,8 +25,10 @@ public class RpcClient {
 
             //3.接收服务端返回的结果
             ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream());
-            Object object = inputStream.readObject();
-            System.out.println(object.toString());
+            User user = (User) inputStream.readObject();
+            String name = user.getName();
+            System.out.println("name = " + name);
+            System.out.println(user.toString());
 
             inputStream.close();
             outputStream.close();

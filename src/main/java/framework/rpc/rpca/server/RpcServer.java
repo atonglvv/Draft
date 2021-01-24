@@ -35,7 +35,7 @@ public class RpcServer {
         ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
         UserService userService = new UserServiceImpl();
         User user = userService.getUser(userId);
-        outputStream.writeObject(user.toString());
+        outputStream.writeObject(user);
         outputStream.flush();
     }
 }
