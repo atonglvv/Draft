@@ -16,13 +16,12 @@ public class RpcClient {
         try {
             //1.建立远程连接
             Socket socket = new Socket("127.0.0.1",8888);
-
+            //2.服务端参数
             ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
-
-            outputStream.writeObject("param");
+            outputStream.writeLong(1L);
             outputStream.flush();
 
-            //4.接收返回的结果
+            //3.接收服务端返回的结果
             ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream());
             Object object = inputStream.readObject();
             System.out.println(object.toString());

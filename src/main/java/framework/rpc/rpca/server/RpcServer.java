@@ -4,8 +4,7 @@ import framework.rpc.domain.entity.User;
 import framework.rpc.service.UserService;
 import framework.rpc.service.impl.UserServiceImpl;
 
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -29,9 +28,13 @@ public class RpcServer {
     }
 
     public static void process (Socket socket) throws IOException {
+        //
+        ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream());
+        Long userId = inputStream.readLong();
+
         ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
         UserService userService = new UserServiceImpl();
-        User user = userService.getUser(1L);
+        User user = userService.getUser(userId);
         outputStream.writeObject(user.toString());
         outputStream.flush();
     }
