@@ -20,6 +20,7 @@ public class RpcServer {
             ServerSocket serverSocket = new ServerSocket(8888);
             while (true){
                 Socket socket = serverSocket.accept();
+                //处理网络IO
                 process(socket);
             }
         }catch (Exception e){
@@ -28,10 +29,10 @@ public class RpcServer {
     }
 
     public static void process (Socket socket) throws IOException {
-        //
+        //获取接受的参数
         ObjectInputStream inputStream = new ObjectInputStream(socket.getInputStream());
         Long userId = inputStream.readLong();
-
+        //输出result
         ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
         UserService userService = new UserServiceImpl();
         User user = userService.getUser(userId);

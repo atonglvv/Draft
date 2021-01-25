@@ -29,7 +29,7 @@ public class RpcClient {
             String name = user.getName();
             System.out.println("name = " + name);
             System.out.println(user.toString());
-
+            //资源关闭
             inputStream.close();
             outputStream.close();
             socket.close();
