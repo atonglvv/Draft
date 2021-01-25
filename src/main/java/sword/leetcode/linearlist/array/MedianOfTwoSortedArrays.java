@@ -34,6 +34,21 @@ package sword.leetcode.linearlist.array;
  * @create: 2021-01-17 14:01
  */
 public class MedianOfTwoSortedArrays {
+    public static void main(String[] args) {
+
+    }
+
+    public static int findMedianSortedArrays(int[] arraym, int[] arrayn) {
+        int m = arraym.length;
+        int n = arrayn.length;
+        int total = m + n;
+
+        return 0;
+    }
+
+    public static int finKth() {
+        return 0;
+    }
 }
 
 
