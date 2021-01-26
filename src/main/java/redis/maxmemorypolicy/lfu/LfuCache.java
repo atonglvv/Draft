@@ -105,4 +105,7 @@ public class LfuCache<K,V> {
             }
         }
     }
+
+    @Override
+    public final String toString() { return cache.toString(); }
 }
