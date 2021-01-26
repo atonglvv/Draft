@@ -1,7 +1,5 @@
 package reflect;
 
-import lombok.Data;
-
 import java.io.Serializable;
 
 /**
@@ -37,4 +35,6 @@ public class User implements Serializable {
         this.id = id;
         this.age = age;
     }
+
+    public User() {}
 }
