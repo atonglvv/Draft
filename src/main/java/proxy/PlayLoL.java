@@ -1,4 +1,4 @@
-package proxy.staticproxy;
+package proxy;
 
 /**
  * 实现Play接口，被代理类

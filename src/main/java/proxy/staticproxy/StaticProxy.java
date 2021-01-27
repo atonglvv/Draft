@@ -1,5 +1,7 @@
 package proxy.staticproxy;
 
+import proxy.PlayLoL;
+
 /**
  * 静态代理
  */

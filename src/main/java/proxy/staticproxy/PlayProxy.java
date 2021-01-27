@@ -1,9 +1,12 @@
 package proxy.staticproxy;
 
+import proxy.Play;
+import proxy.PlayLoL;
+
 /**
  * 代理类，也需要实现Play接口
  */
-public class PlayProxy implements Play{
+public class PlayProxy implements Play {
 
     private PlayLoL playLoL;
 
