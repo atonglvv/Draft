@@ -21,9 +21,19 @@ public class PlayHandler implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("开机上号...");
+        before();
         method.invoke(play);
-        System.out.println("下号关机...");
+        after();
         return play;
+    }
+
+    //前置处理
+    private void before() {
+        System.out.println("开机上号...");
+    }
+
+    //后置处理
+    private void after() {
+        System.out.println("下号关机...");
     }
 }
