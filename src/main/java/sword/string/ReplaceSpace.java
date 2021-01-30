@@ -5,13 +5,14 @@ package sword.string;
  * @Date: 2019/1/30 18:16
  * @email lt1550919167@163.com
  * @QQ 1550919167
- * @Description: 题目描述：
- *              将一个字符串中的空格替换成 "%20"。
- *              Input:
- *              "A B"
+ * @Description:
+ * 题目描述：
+ * 将一个字符串中的空格替换成 "%20"。
+ * Input:
+ * "A B"
  *
- *              Output:
- *              "A%20B"
+ * Output:
+ * "A%20B"
  */
 public class ReplaceSpace {
 

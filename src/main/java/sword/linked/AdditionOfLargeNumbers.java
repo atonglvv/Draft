@@ -5,7 +5,8 @@ package sword.linked;
  * @Date: 2019/3/6 19:49
  * @email lt1550919167@163.com
  * @QQ 1550919167
- * @Description: Addition of large numbers
+ * @Description:
+ * Addition of large numbers
  */
 public class AdditionOfLargeNumbers {
 
