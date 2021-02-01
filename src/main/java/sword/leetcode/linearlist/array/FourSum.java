@@ -1,8 +1,6 @@
 package sword.leetcode.linearlist.array;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -32,6 +30,9 @@ public class FourSum {
         int[] nums = {1, 0, -1, 0, -2, 2, 0, 1};
         List<List<Integer>> lists = fourSum(nums, 0);
         System.out.println(lists);
+        System.out.println("========");
+        List<List<Integer>> result = fourSumI(nums, 0);
+        System.out.println(result);
     }
 
 
@@ -47,7 +48,7 @@ public class FourSum {
      * @version 1.0.0.1
      */
     public static List<List<Integer>> fourSum (int[] nums, int target) {
-        List<List<Integer>> result = new ArrayList<>();
+        List<List<Integer>> result = new LinkedList<>();
         if (nums.length < 4) {
             return result;
         }
@@ -75,6 +76,62 @@ public class FourSum {
                 }
             }
         }
+        //Java Stream 去重
         return result.stream().distinct().collect(Collectors.toList());
+    }
+
+    /**
+     * @description
+     * Find all unique quadruplets
+     * @param nums:
+     * @param target:
+     * @return java.util.List<java.util.List<java.lang.Integer>>
+     * @author atong
+     * @date 2021/2/1 13:57
+     * @version 1.0.0.1
+     */
+    public static List<List<Integer>> fourSumI(int[] nums, int target) {
+        List<List<Integer>> result = new LinkedList<>();
+        if (nums.length < 4) {
+            return result;
+        }
+        for (int i = 0; i < nums.length - 3; i++) {
+            //在业务逻辑中去重
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            for (int j = i + 1; j < nums.length - 2; j++) {
+                //在业务逻辑中去重
+                if (j != i + 1 && nums[j] == nums[j - 1]) {
+                    continue;
+                }
+                int low = j + 1;
+                int high = nums.length - 1;
+
+                while (low < high) {
+                    int sum = nums[i] + nums[j] + nums[low] + nums[high];
+                    if (sum == target) {
+                        //去重防止 nums[low] == nums[low++]
+                        if (low > j + 1 && nums[low] == nums[low - 1]) {
+                            low++;
+                            continue;
+                        }
+                        //去重防止 nums[high] == nums[high--]
+                        if (high < nums.length - 1 && nums[high] == nums[high + 1]) {
+                            high--;
+                            continue;
+                        }
+                        result.add(Arrays.asList(nums[i], nums[j], nums[low], nums[high]));
+                        low ++;
+                        high --;
+                    }else if (sum < target) {
+                        low ++;
+                    }else {
+                        high --;
+                    }
+                }
+            }
+        }
+        return result;
     }
 }
