@@ -35,8 +35,9 @@ public class NextPermutation {
 
     public static void main(String[] args) {
         int[] array = {6,8,7,4,3,2};
-        nextPermutation(array);
-        System.out.println(Arrays.toString(array));
+        int[] array1 = {1,5,1,1};
+        nextPermutation(array1);
+        System.out.println(Arrays.toString(array1));
     }
 
     /**
@@ -54,7 +55,8 @@ public class NextPermutation {
         }
         //从右往左找，找到第一个不满足递增的数(要考虑到重复的数字)
         int partitionIndex = array.length - 2;
-        while (partitionIndex >= 0 && array[partitionIndex] > array[partitionIndex + 1]) {
+        //注意此处为 >=,不能为>,相同也视为递增。比如[1,5,1,1]
+        while (partitionIndex >= 0 && array[partitionIndex] >= array[partitionIndex + 1]) {
             partitionIndex--;
         }
         //该排列为有序排列,且为最大排列,比如[8,7,6,4,3,2]
@@ -65,7 +67,8 @@ public class NextPermutation {
 
         //从右往左(直到partitionIndex)找，找到第一个比partitionNumber大的数
         int changeIndex = array.length - 1;
-        while (array[changeIndex] < array[partitionIndex] && changeIndex > partitionIndex) {
+        //注意此处为 <=,不能为<,重复数没必要交换。比如[1,5,1],此处1跟1不能交换
+        while (array[changeIndex] <= array[partitionIndex] && changeIndex > partitionIndex) {
             changeIndex--;
         }
         //交换arr[partitionIndex]和arr[changeIndex]
@@ -79,5 +82,28 @@ public class NextPermutation {
         int t =array[i];
         array[i] = array[j];
         array[j] =t;
+    }
+
+
+    public static void nextPermutationI(int[] array) {
+        //从右往左找，找到第一个不满足递增的数(要考虑到重复的数字)
+        int partitionIndex = array.length - 2;
+        while (partitionIndex >= 0 && array[partitionIndex] >= array[partitionIndex + 1]) {
+            partitionIndex--;
+        }
+        //该排列为有序排列,且为最大排列,比如[8,7,6,4,3,2]
+        if(partitionIndex < 0) {
+            Arrays.sort(array);
+        }else {
+            //从右往左(直到partitionIndex)找，找到第一个比partitionNumber大的数
+            int changeIndex = array.length - 1;
+            while (array[changeIndex] <= array[partitionIndex] && changeIndex > partitionIndex) {
+                changeIndex--;
+            }
+            //交换arr[partitionIndex]和arr[changeIndex]
+            swap(array, partitionIndex, changeIndex);
+            //重新对arr[i]后面的数排序，接下来继续进行全排列操作
+            Arrays.sort(array,partitionIndex + 1, array.length);
+        }
     }
 }
