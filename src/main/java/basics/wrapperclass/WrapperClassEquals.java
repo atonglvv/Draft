@@ -1,4 +1,4 @@
-package basics;
+package basics.wrapperclass;
 
 /**
  * @program: draft
@@ -6,7 +6,7 @@ package basics;
  * @author: atong
  * @create: 2020-11-16 19:14
  */
-public class Drft {
+public class WrapperClassEquals {
     public static void main(String[] args) {
         Long a = 200L;
         Long b = 200L;
