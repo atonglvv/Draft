@@ -7,7 +7,7 @@ package tool;
  * @create: 2021-02-20 10:52
  */
 public class CompoundInterestCalculator {
-    private static final double income = 120000;
+    private static final double income = 140000;
 
     public static void main(String[] args) {
         double rate = 0.05;
