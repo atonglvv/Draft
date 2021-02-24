@@ -8,35 +8,15 @@ package polymorphism;
  * @date 20:41 2020/10/29
  * @version 1.0.0.1
  **/
-class Fu {
-    String name = "我是父类";
-    static void method1() {
-        System.out.println("调用父类的m1方法");
-    }
-    void method2() {
-        System.out.println("调用父类的m2方法");
-    }
-}
-class Zi extends Fu {
-    String name = "我是子类";
-    static void method1() {
-        System.out.println("调用子类的m1方法");
-    }
-    @Override
-    void method2() {
-        System.out.println("调用子类的m2方法");
-    }
-}
-
 public class Polymorphism {
     public static void main(String[] args) {
-        Fu f = new Zi();
+        Father f = new Child();
         System.out.println(f.name);
-        Fu.method1();
+        Father.method1();
         f.method2();
-        Zi z = new Zi();
+        Child z = new Child();
         System.out.println(z.name);
-        Zi.method1();
+        Child.method1();
         z.method2();
     }
 }
