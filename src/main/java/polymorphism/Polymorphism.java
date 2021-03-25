@@ -10,13 +10,13 @@ package polymorphism;
  **/
 public class Polymorphism {
     public static void main(String[] args) {
-        Father f = new Child();
-        System.out.println(f.name);
+        Father father = new Child();
+        System.out.println(father.name);
         Father.method1();
-        f.method2();
-        Child z = new Child();
-        System.out.println(z.name);
+        father.method2();
+        Child child = new Child();
+        System.out.println(child.name);
         Child.method1();
-        z.method2();
+        child.method2();
     }
 }
