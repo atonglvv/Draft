@@ -27,7 +27,7 @@ public class IpUtil {
 		}
 		return ip;
 	}
-	
+
 	public static List<String> getIpAddrs() throws Exception {
 		List<String> IPs = new ArrayList<String>();
 		Enumeration<NetworkInterface> allNetInterfaces = null;
@@ -44,13 +44,13 @@ public class IpUtil {
 			}
 		}
 		return IPs;
-	}    		
+	}
 
 	/**
 	 * 兼容Linux系统
 	 * @return String
 	 */
-	public static String getLocalIP() {
+	public static String getLocalIp() {
 		String ip = "";
 		try {
 			Enumeration<?> e1 = (Enumeration<?>) NetworkInterface
@@ -75,11 +75,11 @@ public class IpUtil {
 		}
 		return ip;
 	}
-	
+
 	public static void main(String[] args) throws Exception {
 		System.out.println(IpUtil.getLocalhostIp());
 		System.out.println(IpUtil.getIpAddrs());
-		System.out.println(IpUtil.getLocalIP());
+		System.out.println(IpUtil.getLocalIp());
 	}
 
 }
