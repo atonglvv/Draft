@@ -6,7 +6,7 @@ import java.lang.annotation.*;
  * @program: draft
  * @description: 自定义注解
  * 元注解的作用就是负责注解其他注解。Java5.0定义了4个标准的meta-annotation类型，
- * 它们被用来提供对其它 annotation类型作说明。
+ * 它们被用来提供对其它 annotation 类型作说明。
  * Java5.0定义的元注解：
  *  1.@Target,                  [说明了Annotation所修饰的对象范围]
  *      TYPE                    [Class, interface (including annotation type), or enum declaration]
@@ -25,6 +25,11 @@ import java.lang.annotation.*;
  *      RUNTIME                 [在运行时有效（即运行时保留）]
  *  3.@Documented,              [标记注解]
  *  4.@Inherited                [标记注解：如果一个使用了@Inherited修饰的annotation类型被用于一个class,则这个annotation将被用于该class的子类]
+ *
+ * tip:
+ * 关于@Retention value的三个枚举[SOURCE/CLASS/RUNTIME]正式对应了Java代码的加载和运行顺序,Java源码文件 -> .class文件 -> 内存字节码。
+ * 并且后者范围大于前者，所以一般情况下只需要使用 RetentionPolicy.RUNTIME 即可。
+ *
  * @author: atong
  * @create: 2020-11-26 13:44
  */
