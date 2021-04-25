@@ -33,9 +33,5 @@ public class BigDecimalDemo {
         if (bigDecimal120.compareTo(bigDecimal100) > 0) {
             System.out.println("bigDecimal120 大于 bigDecimal100");
         }
-
-
-
-
     }
 }
