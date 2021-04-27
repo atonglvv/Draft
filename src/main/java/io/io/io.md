@@ -5,7 +5,7 @@
 ### 按照传输内容分:
 字节数据:图片、音频、视频]
 - 字节输入流: Inputstrem
-- 字节输出流: outputstrcam
+- 字节输出流: outputstream
 
 字符数括:abcd
 - 字符输入流:Rcader
