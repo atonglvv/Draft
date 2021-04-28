@@ -1,7 +1,6 @@
 package collections.list;
 
-import tool.Student;
-import tool.StudentWithCompara;
+import common.Student;
 
 import java.util.ArrayList;
 import java.util.Collections;
