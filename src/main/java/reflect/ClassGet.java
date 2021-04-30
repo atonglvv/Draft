@@ -1,5 +1,7 @@
 package reflect;
 
+import common.User;
+
 /**
  * @program: draft
  * @description: Java 反射 获取Class三种方式
@@ -16,7 +18,7 @@ public class ClassGet {
         //3 Class.forName("className")
         Class classc = null;
         try {
-            String className = "reflect.User";
+            String className = "common.User";
             classc = Class.forName(className);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
