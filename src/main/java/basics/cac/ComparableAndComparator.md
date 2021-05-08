@@ -19,4 +19,5 @@ compareTo方法的返回值是int，有三种情况：
 ## Comparator
 Comparator相当于“外部比较器”。可以根据需要定制特定的比较规则。
 
+## 总结
 JDK的大量的类包括常见的String、Byte、Char、Date等都实现了Comparable接口。
