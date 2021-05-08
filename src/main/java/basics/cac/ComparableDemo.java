@@ -2,6 +2,10 @@ package basics.cac;
 
 import common.Person;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * @program: draft
  * @description: Comparable Demo
@@ -13,6 +17,7 @@ public class ComparableDemo {
         Person person1 = new Person("atong", 19);
         Person person2 = new Person("yaoyao", 20);
 
+        System.out.println("谁的年龄更大呢?");
         int result = person1.compareTo(person2);
         if (result > 0) {
             System.out.println("atong");
@@ -21,5 +26,13 @@ public class ComparableDemo {
         }else {
             System.out.println("yaoyao");
         }
+
+        List<Person> persons = new ArrayList<>();
+        persons.add(person2);
+        persons.add(person1);
+        System.out.println(persons);
+        //使用Collections排序 [注意：如果不实现Compareable接口,则不能使用Collections.sort()]
+        Collections.sort(persons);
+        System.out.println(persons);
     }
 }
