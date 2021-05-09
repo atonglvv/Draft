@@ -15,8 +15,18 @@ import java.lang.reflect.Parameter;
  */
 public class Constructors {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException, InstantiationException, NoSuchMethodException {
+
         Class c = User.class;
+        //返回无惨构造器
+        Constructor constructor = c.getConstructor();
+        System.out.println(constructor);
+        //获取只有String参数的构造器
+        Constructor constructor1 = c.getConstructor(String.class);
+        System.out.println(constructor1);
+        System.out.println("==============================");
+
+        //反射获取构造器信息
         getConstructors(c);
     }
 

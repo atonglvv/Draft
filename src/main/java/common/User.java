@@ -19,4 +19,8 @@ public class User implements Serializable {
     public String name;
     /** 年龄 */
     private Integer age;
+
+    public User(String name) {
+        this.name = name;
+    }
 }

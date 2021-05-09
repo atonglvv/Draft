@@ -14,25 +14,25 @@ import java.lang.reflect.Modifier;
 public class Fields {
 
     public static void main(String[] args) throws IllegalAccessException, NoSuchFieldException, InstantiationException {
+
         Class c = User.class;
-        getFields(c);
-    }
-
-    public static void getFields (Class cl) throws NoSuchFieldException, IllegalAccessException, InstantiationException {
-
 
         //getField 不能得到私有属性
-        Field nameField = cl.getField("name");
+        Field nameField = c.getField("name");
 
         //反射创建对象
-        Object o = cl.newInstance();
+        Object o = c.newInstance();
         //反射set
         nameField.set(o, "atong");
         //反射get
         System.out.println(nameField.get(o));
         System.out.println("==============================");
 
+        //反射获取字段信息
+        getFields(c);
+    }
 
+    public static void getFields (Class cl)  {
         /**
          * getDeclaredFields
          * Returns an array of {@code Field} objects reflecting all the fields
