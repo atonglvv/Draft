@@ -1,4 +1,4 @@
-package reflect;
+package reflect.clazz;
 
 import common.User;
 

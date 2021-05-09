@@ -1,7 +1,6 @@
 package reflect.main;
 
 import common.User;
-import reflect.ParameterType;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;

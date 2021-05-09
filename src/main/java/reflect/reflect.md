@@ -31,5 +31,21 @@ java.lang.reflect.Constructor:  代表类的构造方法
 
 这些类在 java.lang.reflection 包下
 
+## 反射的优缺点
+### 优点
+可以动态的创建和使用对象(也是框架底层核心),使用灵活。没有反射机制，框架技术就失去底层支撑。
+### 缺点
+使用反射基本是解释执行,对执行速度有影响。
+
+
+## 反射调用优化-关闭访问检查
+Method、Field和Constructor对象都有setAccessible()方法。
+三个Class都间接或直接继承了AccessibleObject类。
+
+setAccessible作用是启动和禁用访问安全检查的开关。
+参数值为true表示反射的对象在使用时取消访问检查,提高反射的效率。
+参数值为false则表示反射的对象执行访问检查。
+
+
 
 
