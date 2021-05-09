@@ -16,7 +16,7 @@ import java.io.Serializable;
 public class User implements Serializable {
     private Long id;
     /** 姓名 */
-    private String name;
+    public String name;
     /** 年龄 */
     private Integer age;
 }
