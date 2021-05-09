@@ -14,7 +14,7 @@ import java.lang.reflect.Parameter;
  */
 public class Constructors {
 
-    public static void main(String[] args) throws IllegalAccessException, InstantiationException, NoSuchMethodException {
+    public static void main(String[] args) throws NoSuchMethodException {
 
         Class c = User.class;
         //返回无惨构造器
