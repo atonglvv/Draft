@@ -20,10 +20,16 @@ public class ClassGet {
         try {
             String className = "common.User";
             classc = Class.forName(className);
+            System.out.println("classc是哪个类的Class对象？  " + classc);
+            System.out.println("classc.getClass() = " + classc.getClass());
+            //得到该Class对象对应的那个类的包名
+            System.out.println("classc包名是 = " + classc.getPackage().getName());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
+        //得到类的全类名
+        System.out.println("====================");
         System.out.println("User Name = " + classa.getName());
         System.out.println("User Name = " + classb.getName());
         System.out.println("User Name = " + classc.getName());
