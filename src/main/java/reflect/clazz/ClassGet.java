@@ -10,11 +10,14 @@ import common.User;
  */
 public class ClassGet {
     public static void main(String[] args) {
+
         //1 Object.class
         Class<User> classa = User.class;
+
         //2 new Object().getClass()
         User user = new User();
         Class<? extends User> classb = user.getClass();
+
         //3 Class.forName("className")
         Class classc = null;
         try {
