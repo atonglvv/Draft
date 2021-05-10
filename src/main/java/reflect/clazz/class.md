@@ -35,3 +35,18 @@ Method getMethod(String name,Class ... paramTypes)      返回一个Method对象
 ## 类的字节码二进制数据，是放在方法区的，有的地方称为类的元数据(包括方法代码,变量名，方法名，访问权限等等)
 
 https://www.zhihu.com/question/38496907
+
+## 哪些类型有Class对象
+外部类,成员内部类,静态内部类,局部内部类,匿名内部类
+
+interface:接口
+
+数组
+
+enum:枚举
+
+annotation:注解
+
+基本数据类型
+
+void
