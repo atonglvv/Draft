@@ -1,4 +1,4 @@
-package jvm.jvm.classLoading;
+package jvm.classload;
 
 /**
  * @Auther: carver
