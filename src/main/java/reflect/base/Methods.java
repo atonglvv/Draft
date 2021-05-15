@@ -23,6 +23,7 @@ public class Methods {
         meMethod.invoke(o, 19, "atong");
 
         Method metMethod = c.getMethod("met");
+        //反射方法调用, 返回类型为Object. 但是他的运行类型和方法定义的返回类型一致.
         Object returnObject = metMethod.invoke(o);
         System.out.println("returnObject 的 运行类型 = " + returnObject.getClass());
 
