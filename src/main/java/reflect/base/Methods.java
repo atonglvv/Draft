@@ -22,6 +22,10 @@ public class Methods {
         Method meMethod = c.getMethod("me", int.class, String.class);
         meMethod.invoke(o, 19, "atong");
 
+        Method metMethod = c.getMethod("met");
+        Object returnObject = metMethod.invoke(o);
+        System.out.println("returnObject 的 运行类型 = " + returnObject.getClass());
+
         System.out.println("==============================");
         getMethods(c);
     }

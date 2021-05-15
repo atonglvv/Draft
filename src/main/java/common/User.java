@@ -34,4 +34,8 @@ public class User implements Serializable {
     public void me(int age, String name) {
         System.out.println(name + age + "岁啦！！！");
     }
+
+    public String met(){
+        return "hello";
+    }
 }
