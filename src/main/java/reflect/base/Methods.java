@@ -2,6 +2,7 @@ package reflect.base;
 
 import common.User;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
@@ -13,8 +14,15 @@ import java.lang.reflect.Modifier;
  */
 public class Methods {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException {
         Class c = User.class;
+
+        Object o = c.newInstance();
+        //反射方法调用
+        Method meMethod = c.getMethod("me", int.class, String.class);
+        meMethod.invoke(o, 19, "atong");
+
+        System.out.println("==============================");
         getMethods(c);
     }
 

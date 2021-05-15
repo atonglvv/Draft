@@ -30,4 +30,8 @@ public class User implements Serializable {
     private User(Integer age) {
         this.age = age;
     }
+
+    public void me(int age, String name) {
+        System.out.println(name + age + "岁啦！！！");
+    }
 }
