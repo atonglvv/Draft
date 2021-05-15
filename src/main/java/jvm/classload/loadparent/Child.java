@@ -1,4 +1,4 @@
-package jvm.classload;
+package jvm.classload.loadparent;
 
 /**
  * @Auther: carver
@@ -7,12 +7,12 @@ package jvm.classload;
  * @QQ 1550919167
  * @Description: JVM类加载时机：当初始化一个类时，如果发现其父类还没有进行初始化，则需要先触发其父类的初始化
  */
-public class Child extends Parent{
+public class Child extends Parent {
     static {
         System.out.println("Child 初始化。。。");
     }
 
     public static void main(String[] args) {
-
+        new Child();
     }
 }
