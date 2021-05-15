@@ -32,8 +32,8 @@ public class ReferenceCountingGC {
 
         /*
          * 参数：
-         *  -verbose:gc         // 打印垃圾回收的日志信息，简单信息
-         *  -XX:+PrintGCDetails  // 详细信息
+         *  -verbose:gc             // 打印垃圾回收的日志信息，简单信息
+         *  -XX:+PrintGCDetails     // 详细信息
          */
         public static void main(String[] args) {
             ReferenceCountingGC.testGC();

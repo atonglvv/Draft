@@ -1,4 +1,4 @@
-package jvm;
+package jvm.classload;
 
 /**
  * @Auther: carver
@@ -6,7 +6,16 @@ package jvm;
  * @email lt1550919167@163.com
  * @QQ 1550919167
  * @Description:
+ * Class静态代码
  */
+
+public class ClassLoader {
+
+    public static void main (String[] args) {
+        System.out.println("count1 = " + SingleTone.count1);
+        System.out.println("count2 = " + SingleTone.count2);
+    }
+}
 
 class SingleTone {
     /**
@@ -36,13 +45,5 @@ class SingleTone {
 
     public static SingleTone getInstance() {
         return singleTone;
-    }
-}
-
-public class ClassLoader {
-
-    public static void main (String[] args) {
-        System.out.println("count1 = " + SingleTone.count1);
-        System.out.println("count2 = " + SingleTone.count2);
     }
 }
