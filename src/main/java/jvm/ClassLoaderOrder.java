@@ -10,7 +10,7 @@ package jvm;
 public class ClassLoaderOrder {
 
     public static void main(String[] args) {
-        /**
+        /*
          * new B() -> 第一次加载B类, B extends A 所以需要先加载A类。
          * 先加载父类(A)的静态代码块,然后加载子类(B)的静态代码块
          * 然后父类构造函数创建对象, 最后子类构造函数
