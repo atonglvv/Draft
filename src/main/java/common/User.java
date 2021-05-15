@@ -16,6 +16,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User implements Serializable {
+    public static Long sta;
     private Long id;
     /** 姓名 */
     public String name;

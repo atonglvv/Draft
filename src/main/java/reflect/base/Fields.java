@@ -19,6 +19,10 @@ public class Fields {
 
         //getField 不能得到私有属性
         Field nameField = c.getField("name");
+        Field staField = c.getField("sta");
+        //getDeclaredField 可获取所有属性
+        Field ageField = c.getDeclaredField("age");
+        ageField.setAccessible(true);
 
         //反射创建对象
         Object o = c.newInstance();
@@ -27,6 +31,14 @@ public class Fields {
         //反射get
         System.out.println(nameField.get(o));
         System.out.println("==============================");
+        ageField.set(o, 19);
+        System.out.println(ageField.get(o));
+        System.out.println("==============================");
+        //静态变量, 对象参数可以是null,当然写成o也可以
+        staField.set(null,66L);
+        System.out.println(staField.get(null));
+        System.out.println("==============================");
+
 
         //反射获取字段信息
         getFields(c);
