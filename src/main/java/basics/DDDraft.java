@@ -15,5 +15,7 @@ public class DDDraft {
         for (String s : list) {
             System.out.println(s);
         }
+        System.out.println(Math.round(-1.5));
+
     }
 }
