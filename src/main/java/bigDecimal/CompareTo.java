@@ -8,7 +8,7 @@ import java.math.BigDecimal;
  * @author: atong
  * @create: 2021-01-07 10:16
  */
-public class BigDecimalDemo {
+public class CompareTo {
     public static void main(String[] args) {
         BigDecimal bigDecimal0 = new BigDecimal("0");
         BigDecimal bigDecimalf1 = new BigDecimal("-1");
