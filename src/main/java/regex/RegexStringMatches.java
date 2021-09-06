@@ -12,11 +12,18 @@ package regex;
 public class RegexStringMatches {
     /**只允许用户输入数字1-9,字母a-z,A-Z,只能半角,不能有空格的正则表达式*/
     public static final String ONLY_LETTER_OR_NUMBER = "^[a-z0-9A-Z]+$";
+    /**只允许用户输入数字1-9,字母a-z,A-Z,以及汉字,不能有空格的正则表达式*/
+    public static final String ONLY_LETTER_OR_NUMBER_OR_CC = "^[a-z0-9A-Z\u4e00-\u9fa5]+$";
 
     public static void main(String[] args) {
         String name = "fda3454";
         boolean containChinese = isOnlyLetterOrNumber(name);
         System.out.println(name + "是否只含有数字或字母:" + containChinese);
+
+
+        String namea = "fda$中国";
+        boolean check = namea.matches(ONLY_LETTER_OR_NUMBER_OR_CC);
+        System.out.println(namea + "是否只包含字母与汉字:" + check);
     }
 
     /**
