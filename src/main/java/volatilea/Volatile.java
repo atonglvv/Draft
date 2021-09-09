@@ -1,4 +1,4 @@
-package thread;
+package volatilea;
 
 import java.util.concurrent.TimeUnit;
 
