@@ -9,7 +9,7 @@ package jvm.classload;
  * Class静态代码
  */
 
-public class ClassLoader {
+public class ClassLoadera {
 
     public static void main (String[] args) {
         System.out.println("count1 = " + SingleTone.count1);
