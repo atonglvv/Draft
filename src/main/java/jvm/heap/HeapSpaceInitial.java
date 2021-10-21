@@ -1,4 +1,4 @@
-package jvm;
+package jvm.heap;
 
 /**
  * @program: draft
