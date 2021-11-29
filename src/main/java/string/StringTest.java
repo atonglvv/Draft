@@ -146,4 +146,21 @@ public class StringTest {
         System.out.println(s == "ab");
     }
 
+    @Test
+    public void test9() {
+        //不会再字符串常量池中创建"ab"
+        String s = new String("a") + new String("b");
+        s.intern();
+        String s2 = "ab";
+        System.out.println(s == s2);
+    }
+
+    @Test
+    public void test() {
+        //会再字符串常量池中创建"ab"
+        String s = new String("ab");
+        s.intern();
+        String s2 = "ab";
+        System.out.println(s == s2);
+    }
 }
