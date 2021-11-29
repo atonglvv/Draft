@@ -118,4 +118,32 @@ public class StringTest {
         System.out.println(s3 == s4);
         System.out.println(s4 == s5);
     }
+
+    @Test
+    public void test7() {
+        //new String("ab")
+        String s = new String("a") + new String("b");
+        /*
+         * jdk6: 在字符串常量池中创建一个"ab"对象
+         * jdk7/8: 字符串常量池中没有创建"ab"对象, 而是创建了一个引用, 指向new String("ab")
+         */
+        String s2 = s.intern();
+        System.out.println(s2 == "ab");
+        System.out.println(s == "ab");
+    }
+
+    @Test
+    public void test8() {
+        String x = "ab";
+        //new String("ab")
+        String s = new String("a") + new String("b");
+        /*
+         * jdk6: 在字符串常量池中创建一个"ab"对象
+         * jdk7/8: 字符串常量池中没有创建"ab"对象, 而是创建了一个引用, 指向new String("ab")
+         */
+        String s2 = s.intern();
+        System.out.println(s2 == "ab");
+        System.out.println(s == "ab");
+    }
+
 }
