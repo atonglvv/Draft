@@ -83,4 +83,25 @@ public class StringTest {
     }
 
 
+    @Test
+    public void test5() {
+        String s = new String("1");
+        //调用此方法前，字符串常量中已经存在"1"了
+        s.intern();
+        String s2 = "1";
+        //false
+        System.out.println(s == s2);
+
+        //s3变量的地址为：new String("11"),注意：下面这行代码不会在常量池中创建"11"对象
+        String s3 = new String("1") + new String("1");
+        /*
+         * jdk6:创建了一个新的对象"11", 在永久代中  --> false
+         * jdk7/8:常量池中并没有创建对象"11",而是创建了一个指向堆空间中new String("1")的地址  --> true
+         */
+        s3.intern();
+        String s4 = "11";
+        System.out.println(s3 == s4);
+    }
+
+
 }
