@@ -104,4 +104,18 @@ public class StringTest {
     }
 
 
+    @Test
+    public void test6() {
+        //s3变量的地址为：new String("11"),注意：下面这行代码不会在常量池中创建"11"对象
+        String s3 = new String("1") + new String("1");
+        String s4 = "11";
+        /*
+         * jdk6:创建了一个新的对象"11", 在永久代中  --> false
+         * jdk7/8:常量池中并没有创建对象"11",而是创建了一个指向堆空间中new String("1")的地址  --> true
+         */
+        s3.intern();
+        String s5 = s3.intern();
+        System.out.println(s3 == s4);
+        System.out.println(s4 == s5);
+    }
 }
