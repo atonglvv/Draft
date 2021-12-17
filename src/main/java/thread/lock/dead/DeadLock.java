@@ -23,8 +23,8 @@ public class DeadLock {
     private static Object resource2 = new Object();
     public static void main(String[] args) {
         //线程1在持有resource1未释放的前提下，去锁resource2
-        //线程1通过 synchronized(resource1)获得resource1的监视器锁
         new Thread(() -> {
+            //线程1通过 synchronized(resource1)获得resource1的监视器锁
             synchronized (resource1) {
                 System.out.println(Thread.currentThread() + "get resource1");
                 try {
