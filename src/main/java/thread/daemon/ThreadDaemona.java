@@ -1,4 +1,6 @@
-package thread;
+package thread.daemon;
+
+import thread.MyThread;
 
 /**
  * @Auther: carver
@@ -7,7 +9,7 @@ package thread;
  * @QQ 1550919167
  * @Description:
  */
-public class ThreadDaemon {
+public class ThreadDaemona {
 
     public static void main(String[] args) {
         MyThread tr = new MyThread();
