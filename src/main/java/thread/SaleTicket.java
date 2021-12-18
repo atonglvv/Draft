@@ -39,7 +39,7 @@ public class SaleTicket {
 class Ticket {
     //票数
     private Integer num = 30;
-    /* 此处可以将 synchronized 关键字 去掉, 执行代码 试一下 */
+    /* 此处可以将 synchronized 关键字 去掉, 执行代码 试一下 , 会出现 一下卖出多张票的问题*/
     public synchronized void sale () {
         //判断是否有票
         if (num > 0) {
