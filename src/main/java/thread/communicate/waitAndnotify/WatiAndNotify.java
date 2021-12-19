@@ -1,4 +1,4 @@
-package thread.communicate;
+package thread.communicate.waitAndnotify;
 
 /**
  * @program: draft
