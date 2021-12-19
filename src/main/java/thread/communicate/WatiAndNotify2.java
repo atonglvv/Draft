@@ -2,16 +2,13 @@ package thread.communicate;
 
 /**
  * @program: draft
- * @description: Wait 和 Notify 实现线程间通信
- * 两个线程, 依次执行, 依次操作 共享资源number的值, 其中一个线程+1, 其中一个线程-1
- * 考虑：wait需要放到 while 里, 而不是 if 里。
- * wait放到 if 中, 存在虚假唤醒问题。
+ * @description: Wati与Notify实现线程间通信
  * @author: atong
- * @create: 2021-12-18 21:56
+ * @create: 2021-12-19 18:14
  */
-public class WatiAndNotify {
+public class WatiAndNotify2 {
     public static void main(String[] args) {
-        Share share = new Share();
+        Share2 share = new Share2();
         new Thread(() -> {
             for (int i = 0; i < 10; i++) {
                 try {
@@ -31,17 +28,37 @@ public class WatiAndNotify {
                 }
             }
         }, "Thread B").start();
+
+        new Thread(() -> {
+            for (int i = 0; i < 10; i++) {
+                try {
+                    share.incr();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, "Thread C").start();
+
+        new Thread(() -> {
+            for (int i = 0; i < 10; i++) {
+                try {
+                    share.desc();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, "Thread D").start();
     }
 }
 
 //资源类
-class Share {
+class Share2 {
     //初始值
     private Integer number = 0;
 
     //+1的方法
     public synchronized void incr () throws InterruptedException {
-        if (number != 0) {
+        while (number != 0) {
             this.wait();
         }
         number++;
@@ -51,7 +68,7 @@ class Share {
 
     //-1的方法
     public synchronized void desc () throws InterruptedException {
-        if (number != 1) {
+        while (number != 1) {
             this.wait();
         }
         number--;
