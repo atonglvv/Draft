@@ -1,18 +1,19 @@
-package thread.collection;
+package thread.collection.list;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @program: draft
- * @description: CopyOnWriteArrayList线程安全的
- * 写时复制
+ * @description: 使用Collections工具类保证ArrayList线程安全
  * @author: atong
- * @create: 2021-12-19 22:20
+ * @create: 2021-12-19 22:13
  */
-public class CopyOnWriteSafe {
+public class CollectionsSafe {
     public static void main(String[] args) {
-        CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
+        List<String> list = Collections.synchronizedList(new ArrayList<>());
         for (int i = 0; i < 30; i++) {
             new Thread(()->{
                 /*

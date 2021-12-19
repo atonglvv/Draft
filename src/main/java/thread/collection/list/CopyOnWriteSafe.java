@@ -1,18 +1,18 @@
-package thread.collection;
+package thread.collection.list;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @program: draft
- * @description: 证明ArrayList线程不安全
+ * @description: CopyOnWriteArrayList线程安全的
+ * 写时复制
  * @author: atong
- * @create: 2021-12-19 21:42
+ * @create: 2021-12-19 22:20
  */
-public class ArrayListThreadSafe {
+public class CopyOnWriteSafe {
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
+        CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
         for (int i = 0; i < 30; i++) {
             new Thread(()->{
                 /*

@@ -1,19 +1,19 @@
-package thread.collection;
+package thread.collection.list;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
+import java.util.Vector;
 
 /**
  * @program: draft
- * @description: 使用Collections工具类保证ArrayList线程安全
+ * @description: Vector证明线程安全
  * @author: atong
- * @create: 2021-12-19 22:13
+ * @create: 2021-12-19 22:12
  */
-public class CollectionsSafe {
+public class VectorSafe {
     public static void main(String[] args) {
-        List<String> list = Collections.synchronizedList(new ArrayList<>());
+        Vector<String> list = new Vector<>();
         for (int i = 0; i < 30; i++) {
             new Thread(()->{
                 /*

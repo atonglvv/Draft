@@ -1,19 +1,18 @@
-package thread.collection;
+package thread.collection.list;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import java.util.Vector;
 
 /**
  * @program: draft
- * @description: Vector证明线程安全
+ * @description: 证明ArrayList线程不安全
  * @author: atong
- * @create: 2021-12-19 22:12
+ * @create: 2021-12-19 21:42
  */
-public class VectorSafe {
+public class ArrayListThreadSafe {
     public static void main(String[] args) {
-        Vector<String> list = new Vector<>();
+        List<String> list = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
             new Thread(()->{
                 /*
