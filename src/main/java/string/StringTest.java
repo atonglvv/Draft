@@ -163,4 +163,14 @@ public class StringTest {
         String s2 = "ab";
         System.out.println(s == s2);
     }
+
+    @Test
+    public void test55() {
+        String s1 = "";
+        String s2 = new String("");
+        String s3 = new String("").intern();
+        System.out.println(s1 == "");
+        System.out.println(s2 == "");
+        System.out.println(s3 == "");
+    }
 }
