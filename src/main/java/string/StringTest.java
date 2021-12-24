@@ -156,6 +156,18 @@ public class StringTest {
     }
 
     @Test
+    public void test10() {
+        /**
+         *  不会在字符串常量池中创建"ab"
+         *  对比 test9 , 此处注意 Java中的黑盒测试, 此处执行结果跟在main方法中执行结果不一致。
+         */
+        String s = new String("1") + new String("1");
+        s.intern();
+        String s2 = "11";
+        System.out.println(s == s2);
+    }
+
+    @Test
     public void test() {
         //会再字符串常量池中创建"ab"
         String s = new String("ab");
