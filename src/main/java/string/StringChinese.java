@@ -20,7 +20,7 @@ public class StringChinese {
         String name = "fdad中sf";
         boolean containChinese = isContainChinese(name);
         System.out.println(name + "是否包含中文:" + containChinese);
-        String chinese = getChinese("fdslf中文fdf");
+        String chinese = getChinese("fds哈lf中5fds文fdf");
         System.out.println(chinese);
     }
 
@@ -38,10 +38,11 @@ public class StringChinese {
     public static String getChinese(String str) {
         StringBuilder sb = new StringBuilder();
         Matcher m = p.matcher(str);
-        if (m.find()) {
+        while (m.find()) {
             for(int i=0; i <= m.groupCount(); i++){
                 sb.append(m.group(i));
                 System.out.println(m.groupCount());
+                System.out.println("start = " + m.start());
             }
         }
         return sb.toString();
