@@ -17,9 +17,11 @@ public class StringChinese {
     private static final Pattern p = Pattern.compile("[\u4e00-\u9fa5]");
 
     public static void main(String[] args) {
-        String name = "fdadsf";
+        String name = "fdad中sf";
         boolean containChinese = isContainChinese(name);
         System.out.println(name + "是否包含中文:" + containChinese);
+        String chinese = getChinese("fdslf中文fdf");
+        System.out.println(chinese);
     }
 
     /**
@@ -31,5 +33,17 @@ public class StringChinese {
     public static boolean isContainChinese(String str) {
         Matcher m = p.matcher(str);
         return m.find();
+    }
+
+    public static String getChinese(String str) {
+        StringBuilder sb = new StringBuilder();
+        Matcher m = p.matcher(str);
+        if (m.find()) {
+            for(int i=0; i <= m.groupCount(); i++){
+                sb.append(m.group(i));
+                System.out.println(m.groupCount());
+            }
+        }
+        return sb.toString();
     }
 }
