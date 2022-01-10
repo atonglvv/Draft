@@ -4,6 +4,8 @@ package thread.sync.exercise;
  * @program: draft
  * @description: synchronized exercise 1
  * t1 跟 t2 互斥, 但是执行顺序不确定
+ * result:
+ * a b  或  b a
  * @author: atong
  * @create: 2022-01-10 21:28
  */
