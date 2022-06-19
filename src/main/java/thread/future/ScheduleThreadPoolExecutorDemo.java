@@ -18,9 +18,11 @@ public class ScheduleThreadPoolExecutorDemo {
     public static String getStr() {
         System.out.println("begin");
         ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(5);
-        executor.schedule(() -> {
-            System.out.println("a");
-        }, 6, TimeUnit.SECONDS);
+        for (int i = 0; i < 6; i++) {
+            executor.schedule(() -> {
+                System.out.println("a");
+            }, 6, TimeUnit.SECONDS);
+        }
         System.out.println("end");
         return "ook";
     }
