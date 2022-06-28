@@ -27,13 +27,18 @@ public class ThreadId {
         return threadId.get();
     }
 
+    public static void add() {
+        threadId.set(threadId.get() + 1);
+    }
+
     public static void remove() {
         threadId.remove();
     }
 
-    public static void incrementSameThreadId() {
+    public static void incrementSameThreadId(int loop) {
         try {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < loop; i++) {
+                ThreadId.add();
                 System.out.println(Thread.currentThread() + "_" + i + ", threadId: " + ThreadId.get());
             }
         } finally {
@@ -42,8 +47,8 @@ public class ThreadId {
     }
 
     public static void main(String[] args) {
-        incrementSameThreadId();
-        new Thread(ThreadId::incrementSameThreadId).start();
-        new Thread(ThreadId::incrementSameThreadId).start();
+        incrementSameThreadId(3);
+        new Thread(() -> ThreadId.incrementSameThreadId(2)).start();
+        new Thread(() -> ThreadId.incrementSameThreadId(5)).start();
     }
 }
