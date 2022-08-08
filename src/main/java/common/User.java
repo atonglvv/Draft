@@ -40,4 +40,8 @@ public class User implements Serializable {
     public String met(){
         return "hello";
     }
+
+    void setNamee(String name) {
+        this.name = name;
+    }
 }

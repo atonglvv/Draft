@@ -1,5 +1,6 @@
 package reflect.base;
 
+import com.alibaba.fastjson.JSON;
 import common.User;
 
 import java.lang.reflect.InvocationTargetException;
@@ -28,12 +29,19 @@ public class Methods {
         System.out.println("returnObject 的 运行类型 = " + returnObject.getClass());
 
         System.out.println("==============================");
+
+        Method setNameeMethod = c.getDeclaredMethod("setNamee", String.class);
+        setNameeMethod.setAccessible(true);
+        setNameeMethod.invoke(o, "tao");
+        System.out.println(JSON.toJSONString(o));
+        System.out.println("==============================");
         getMethods(c);
     }
 
 
     public static void getMethods(Class cl) {
-        Method[] methods = cl.getMethods();
+        Method[] methods = cl.getDeclaredMethods();
+        /*Method[] methods = cl.getMethods();*/
         for (Method method : methods) {
             String name = method.getName();
             Class<?> returnType = method.getReturnType();
