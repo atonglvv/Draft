@@ -19,10 +19,17 @@ public class Fields {
 
         //getField 不能得到私有属性
         Field nameField = c.getField("name");
+        System.out.println("获取 name 属性 = " + nameField.getName());
         Field staField = c.getField("sta");
+        // 以下代码会报错, 因为 getField 获取不到 私有属性
+        // Field ageFieldPublic = c.getField("age");
+        // System.out.println("获取 age 属性 = " + ageFieldPublic.getName());
         //getDeclaredField 可获取所有属性
         Field ageField = c.getDeclaredField("age");
         ageField.setAccessible(true);
+
+        Field str = getTargetField(c, "str");
+        System.out.println("获取父类 str 属性 = " + str.getName());
 
         //反射创建对象
         Object o = c.newInstance();
@@ -42,6 +49,18 @@ public class Fields {
 
         //反射获取字段信息
         getFields(c);
+    }
+
+    public static Field getTargetField(Class<?> aClass, String fieldName){
+        if(Object.class.equals(aClass) ){
+            return null;
+        } else {
+            try {
+                return aClass.getDeclaredField(fieldName);
+            }catch (NoSuchFieldException e){
+                return getTargetField(aClass.getSuperclass(),fieldName);
+            }
+        }
     }
 
     public static void getFields (Class cl)  {

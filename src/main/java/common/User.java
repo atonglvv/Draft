@@ -17,7 +17,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class User implements Serializable {
+public class User extends BaseUser implements Serializable{
     public static Long sta;
     private Long id;
     /** 姓名 */
