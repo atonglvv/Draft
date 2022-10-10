@@ -14,11 +14,7 @@ public class ThreadId {
 
     // Thread local variable containing each thread's ID
     private static final ThreadLocal<Integer> threadId =
-            new ThreadLocal<Integer>() {
-                @Override protected Integer initialValue() {
-                    return nextId.getAndIncrement();
-                }
-            };
+            ThreadLocal.withInitial(nextId::getAndIncrement);
 
     private static final ThreadLocal<Integer> THREAD_LOCAL = new ThreadLocal<>();
 
