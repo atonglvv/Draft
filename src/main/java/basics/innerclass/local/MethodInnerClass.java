@@ -1,4 +1,4 @@
-package basics.innerclass;
+package basics.innerclass.local;
 
 /**
  * @program: draft

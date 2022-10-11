@@ -2,7 +2,7 @@ package basics.innerclass.member;
 
 /**
  * @program: draft
- * @description: Java 内部类之成员内部类
+ * @description: Java 内部类之成员内部类 （成员内部类用得比较少）
  * 是什么：
  * 成员内部类 —— 就是位于外部类成员位置的类
  * 特点：可以使用外部类中所有的成员变量和成员方法（包括private的）
