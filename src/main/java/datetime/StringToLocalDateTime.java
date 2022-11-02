@@ -27,6 +27,9 @@ public class StringToLocalDateTime {
         dateTimeStrList.forEach(str -> {
             LocalDateTime parse = LocalDateTime.parse(str, DateTimeFormatter.ISO_OFFSET_DATE_TIME);
             System.out.println(parse);
+            String dateStr = parse.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+            System.out.println(dateStr);
+            System.out.println("------");
         });
 
 
