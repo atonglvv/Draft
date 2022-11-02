@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @program: Draft
- * @description: 比较大小
+ * @description: 比较 LocalDateTime 大小
  * @author: atong
  * @create: 2022-06-20 17:36
  */
