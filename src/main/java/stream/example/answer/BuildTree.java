@@ -1,7 +1,9 @@
 package stream.example.answer;
 
+import com.alibaba.fastjson.JSON;
 import stream.example.issue.FirstLevelOrderStatusEnum;
 import stream.example.issue.OrderStatusEnum;
+import stream.example.issue.SecondLevelOrderStatusEnum;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,25 +19,37 @@ import java.util.stream.Collectors;
  */
 public class BuildTree {
     public static void main(String[] args) {
-//        Map<Integer, String> collect = Arrays.stream(FirstLevelOrderStatusEnum.values())
-//                .collect(Collectors.toMap(FirstLevelOrderStatusEnum::getCode, FirstLevelOrderStatusEnum::getSecondOrderStatusCodes));
-
-        // 三级状态
-        List<CascaderVO> thirdCascaders = new ArrayList<>();
-        Arrays.stream(OrderStatusEnum.values()).forEach(item -> {
-            CascaderVO cascaderVO = new CascaderVO();
-            cascaderVO.setValue(item.getCode());
-            cascaderVO.setLabel(item.getValue());
-        });
-
-        // 二级状态
-        Map<Integer, List<OrderStatusEnum>> collect = Arrays.stream(OrderStatusEnum.values()).collect(Collectors.groupingBy(OrderStatusEnum::getSecondCode));
-
         //一级状态
         List<CascaderVO> firstCascaders = Arrays.stream(FirstLevelOrderStatusEnum.values())
                 .map(item -> new CascaderVO().setValue(item.getCode()).setLabel(item.getValue()))
                 .collect(Collectors.toList());
+        // 二级状态
+        Map<Integer, List<OrderStatusEnum>> firstMap = Arrays.stream(OrderStatusEnum.values())
+                .collect(Collectors.groupingBy(OrderStatusEnum::getFirstCode));
+        // 三级状态
+        Map<Integer, List<OrderStatusEnum>> secondMap = Arrays.stream(OrderStatusEnum.values())
+                .collect(Collectors.groupingBy(OrderStatusEnum::getSecondCode));
+        firstCascaders.forEach(item -> {
+            Integer code = item.getValue();
+            List<OrderStatusEnum> orderStatusEnums = firstMap.get(code);
+            List<CascaderVO> seconds = orderStatusEnums.stream()
+                    .map(itema -> new CascaderVO()
+                            .setValue(itema.getSecondCode())
+                            .setLabel(SecondLevelOrderStatusEnum.getEnum(itema.getSecondCode()).getValue()))
+                    .distinct()
+                    .collect(Collectors.toList());
+            seconds.forEach(itemb -> {
+                Integer codeb = itemb.getValue();
+                List<OrderStatusEnum> secondList = secondMap.get(codeb);
+                List<CascaderVO> collect = secondList.stream()
+                        .map(itema -> new CascaderVO().setValue(itema.getCode()).setLabel(itema.getValue()))
+                        .distinct()
+                        .collect(Collectors.toList());
+                itemb.setChildren(collect);
+            });
 
-        return null;
+            item.setChildren(seconds);
+        });
+        System.out.println(JSON.toJSONString(firstCascaders));
     }
 }
