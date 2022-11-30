@@ -1,4 +1,4 @@
-package stream.example.issue;
+package stream.example.tree.issue;
 
 import java.util.Arrays;
 import java.util.List;

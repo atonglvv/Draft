@@ -1,4 +1,4 @@
-package stream.example.answer;
+package stream.example.tree.answer;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
