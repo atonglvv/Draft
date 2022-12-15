@@ -38,9 +38,13 @@ public class ListToMap {
         // npe 因为 Name没有数据
         /*Map<Long, String> collect = users.stream().collect(Collectors.toMap(User::getId, User::getName));
         System.out.println(JSON.toJSON(collect));*/
-
+        // 解决方法一
         Map<Long, String> collect = users.stream()
                 .collect(Collectors.toMap(User::getId, item -> Optional.ofNullable(item.getName()).orElse("")));
+        // 解决方法二
+        Map<Long, String> collect1 = users.stream().filter(item -> null != item.getName())
+                .collect(Collectors.toMap(User::getId, User::getName));
         System.out.println(JSON.toJSON(collect));
+        System.out.println(JSON.toJSON(collect1));
     }
 }
