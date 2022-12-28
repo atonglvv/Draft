@@ -24,5 +24,13 @@ public class BigDecimalDemo {
         // 排序
         List<BigDecimal> collect = bigDecimals.stream().sorted().collect(Collectors.toList());
         System.out.println(collect.toString());
+
+        // 比较大小
+        BigDecimal a = new BigDecimal("9");
+        BigDecimal b = new BigDecimal("9.00");
+        BigDecimal c = null;
+        System.out.println("a == b me? " + a.equals(b));
+        System.out.println("a.compareTo(b) ? " + a.compareTo(b));
+        System.out.println("a.compareTo(c) ? " + a.compareTo(c));
     }
 }
