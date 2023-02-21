@@ -33,5 +33,11 @@ public class CompareTo {
         if (bigDecimal120.compareTo(bigDecimal100) > 0) {
             System.out.println("bigDecimal120 大于 bigDecimal100");
         }
+        // 判断小数点右边最后一位有0的影响
+        BigDecimal bigDecimalaa = new BigDecimal("2.10");
+        BigDecimal bigDecimalbb = new BigDecimal("2.1");
+        if (bigDecimalaa.compareTo(bigDecimalbb) == 0) {
+            System.out.println("bigDecimalaa equals bigDecimalbb");
+        }
     }
 }
