@@ -18,5 +18,6 @@ public class EqualsDemo {
         // 两者不相等
         System.out.println(ObjectUtils.notEqual(bigDecimala, bigDecimalb));
         System.out.println(ObjectUtil.notEqual(bigDecimala, bigDecimalb));
+        System.out.println(ObjectUtil.equals(bigDecimala, bigDecimalb));
     }
 }
