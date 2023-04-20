@@ -20,8 +20,6 @@ public class CompareTo {
             System.out.println("bigDecimalf1 小于等于 0");
         }
 
-
-
         BigDecimal bigDecimal100 = new BigDecimal("100");
         BigDecimal bigDecimal88 = new BigDecimal("88");
         BigDecimal bigDecimal120 = new BigDecimal("120");
@@ -32,6 +30,19 @@ public class CompareTo {
         //判断是否大于100
         if (bigDecimal120.compareTo(bigDecimal100) > 0) {
             System.out.println("bigDecimal120 大于 bigDecimal100");
+        }
+        // 判断小数点右边最后一位有0的影响
+        BigDecimal bigDecimalaa = new BigDecimal("2.10");
+        BigDecimal bigDecimalbb = new BigDecimal("2.1");
+        if (bigDecimalaa.compareTo(bigDecimalbb) == 0) {
+            System.out.println("bigDecimalaa equals bigDecimalbb");
+        }
+
+        // 判断小数点右边最后一位有0的影响
+        BigDecimal bigDecimalaaa = null;
+        BigDecimal bigDecimalbbb = new BigDecimal("2.1");
+        if (bigDecimalaaa.compareTo(bigDecimalbbb) == 0) {
+            System.out.println("bigDecimalaa equals bigDecimalbb");
         }
     }
 }
