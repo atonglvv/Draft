@@ -21,7 +21,7 @@ public class ArraysSort {
         List<Integer> lists = Arrays.asList(array);
         System.out.println(lists);
 
-        //初始化一个容量为1000的1-100的正整数数组
+        //初始化一个容量为1000的1-100的正整数字符串数组
         String[] arrayStr = new String[1000];
         for (int i = 0; i < 1000; i++) {
             int num = random.nextInt(100) + 1;
