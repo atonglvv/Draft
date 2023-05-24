@@ -1,5 +1,6 @@
 package datetime;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.Period;
@@ -45,5 +46,13 @@ public class LocalDateTimeTest {
         // 减一整天
         LocalDateTime minus = now.minus(Period.ofDays(1));
         System.out.println("minus = " + minus);
+
+        // Duration
+        System.out.println("-------------------------------------------");
+        LocalDateTime localDateTime1 = LocalDateTime.of(2023, Month.MAY, 24, 19, 47,20);
+        Duration duration = Duration.between(LocalDateTime.now(), localDateTime1);
+        System.out.println(duration.toDays());
+        System.out.println(duration.toHours());
+        System.out.println(duration.toMinutes());
     }
 }
