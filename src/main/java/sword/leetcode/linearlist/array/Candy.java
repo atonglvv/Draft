@@ -5,6 +5,7 @@ import java.util.Arrays;
 /**
  * @program: draft
  * @description:
+ * https://leetcode.cn/problems/candy/description/
  * Candy
  * There are N children standing in a line. Each child is assigned a rating value.
  * You are giving candies to these children subjected to[遭受;承受;使某人经历某事] the following requirements:
