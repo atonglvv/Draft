@@ -20,6 +20,8 @@ public class CountDownLatchDemo {
             }, String.valueOf(i)).start();
         }
 
+        System.out.println(Thread.currentThread().getName() + " 班长马上锁门嘞");
+
         countDownLatch.await();
 
         System.out.println(Thread.currentThread().getName() + " 班长锁门嘞");
